@@ -1,0 +1,69 @@
+﻿<Page x:Class="MyRecipes.Pages.AddEditIngPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:MyRecipes.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="345" d:DesignWidth="705"
+      Title="AddEditIngPage">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="4*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Row="0" Grid.RowSpan="2" Grid.Column="1">
+
+            <StackPanel Orientation="Horizontal" Margin="10" HorizontalAlignment="Center">
+
+                <TextBlock>Наименование</TextBlock>
+                <TextBox Margin="11 0 0 0" Width="100" Name="NameTB" Text="{Binding Name}"></TextBox>
+
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="10" HorizontalAlignment="Center">
+
+                <TextBlock>Цена (руб)</TextBlock>
+                <TextBox Margin="35 0 0 0" Width="100" Name="CostTB" Text="{Binding Cost}"></TextBox>
+
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="10" HorizontalAlignment="Center">
+
+                <TextBlock>За количество</TextBlock>
+                <TextBox Margin="15 0 0 0" Width="70" Name="ToCountTB" Text="{Binding CostForCount}"></TextBox>
+                <ComboBox x:Name="UnitCB" Margin="0 0 0 0">
+                    <ComboBoxItem>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Name}"/>
+                        </DataTemplate>
+                    </ComboBoxItem>
+                </ComboBox>
+
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="10" HorizontalAlignment="Center">
+
+                <TextBlock>В холодильнике</TextBlock>
+                <TextBox Margin="5" Width="100" Name="CountInFrozTB" Text="{Binding AvailableCount}"></TextBox>
+
+            </StackPanel>
+
+            <StackPanel  Orientation="Horizontal" HorizontalAlignment="Center">
+
+                <Button Margin="5" Content="Добавить" x:Name="AddBTN" Click="AddBTN_Click"/>
+
+                <Button Margin="5" Content="Отменить" x:Name="BackBTN" Click="BackBTN_Click"/>
+
+            </StackPanel>
+
+        </StackPanel>
+    </Grid>
+</Page>

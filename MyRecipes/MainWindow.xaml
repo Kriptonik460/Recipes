@@ -1,0 +1,129 @@
+﻿<Window x:Class="MyRecipes.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MyRecipes"
+        mc:Ignorable="d"
+        Title="Мои рецепты" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" MinHeight="105"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto" MinWidth="105"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Image Height="100" Width="100" Source="Image\kos.png"/>
+
+        <Grid Grid.Row="1" Background="#FFFED7C1">
+
+            <Button x:Name="DishesBTN"
+                    Height="20"
+                    Width="70" 
+                    Background="#FFD5C847" 
+                    BorderBrush="#FF70716C"
+                    Margin="12.5"
+                    VerticalAlignment="Top"
+                    Content="Блюда"
+                    FontSize="8"
+                    Click="DishesBTN_Click"/>
+
+            <Button x:Name="IngridientBTN"
+                    Height="20"
+                    Width="70" 
+                    Background="#FFD5C847" 
+                    BorderBrush="#FF70716C"
+                    Margin="12.5 45"
+                    VerticalAlignment="Top"
+                    Content="Ингридиенты"
+                    FontSize="8"
+                    Click="IngridientBTN_Click"/>
+
+            <Button x:Name="ExitBTN"
+                    Height="20"
+                    Width="70" 
+                    Background="#FFD5C847" 
+                    BorderBrush="#FF70716C"
+                    Margin="12.5"
+                    VerticalAlignment="Bottom"
+                    Content="Выход"
+                    FontSize="8"
+                    Click="ExitBTN_Click"/>
+            
+        </Grid>
+
+        <Grid Grid.Column="1">
+
+            <TextBlock x:Name="TitleTB"
+                       FontSize="25"
+                       FontWeight="Bold"
+                       VerticalAlignment="Top"
+                       Margin="12.5"/>
+
+
+            <StackPanel Background="#FFFDB249"
+                        Height="15"
+                        VerticalAlignment="Top"
+                        Margin="0 50 0 0"/>
+
+
+            <Grid x:Name="IngTitle"  VerticalAlignment="Bottom" >
+
+                <TextBlock x:Name="CountIngTb" HorizontalAlignment="Left" Margin="5">13 наименований</TextBlock>
+                <TextBlock x:Name="SumIngTb" HorizontalAlignment="Right" Margin="5">Запасов в холодильнике на сумму (руб.): NNNN</TextBlock>
+            </Grid>
+
+            <StackPanel VerticalAlignment="Bottom" x:Name="MenuInMain" >
+
+                <StackPanel Orientation="Horizontal">
+                
+                    <StackPanel Orientation="Horizontal">
+
+                    <TextBlock Text="Категория: "/>
+
+                        <ComboBox Width="110"
+                              x:Name="CategoryCB" SelectionChanged="CategoryCB_SelectionChanged">
+                            <ComboBox.ItemTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Name}"/>
+                                </DataTemplate>
+                            </ComboBox.ItemTemplate>
+                        </ComboBox>
+    
+
+                    </StackPanel>
+                
+                    <StackPanel Orientation="Horizontal"
+                                Margin="20 0 0 0">
+
+                        <TextBlock Text="Наименование: "/>
+
+                        <TextBox Width="110"
+                                 x:Name="SearchTB" TextChanged="SearchTB_TextChanged"/>
+
+                    </StackPanel>
+                    
+                </StackPanel>
+                    
+
+                <StackPanel>
+
+                    <CheckBox Content="Показывать только блюда, на которые не хватает ингридиентов"/>
+
+                </StackPanel>
+                
+            </StackPanel>
+
+        </Grid>
+
+        <Frame Grid.Row="1"
+               Grid.Column="1"
+               x:Name="MainFrame"
+               NavigationUIVisibility="Hidden"/>
+
+
+
+    </Grid>
+</Window>
