@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Хранилище MyRecipes4Model" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="Хранилище MyRecipesModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Category">
           <Key>
             <PropertyRef Name="Id" />
@@ -124,7 +124,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="Хранилище MyRecipes4ModelContainer">
+        <EntityContainer Name="Хранилище MyRecipesModelContainer">
           <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CookingStage" EntityType="Self.CookingStage" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Dish" EntityType="Self.Dish" Schema="dbo" store:Type="Tables" />
@@ -156,7 +156,7 @@
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="MyRecipes4Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="MyRecipesModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="Category">
           <Key>
             <PropertyRef Name="Id" />
@@ -286,7 +286,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="MyRecipes4Entities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="MyRecipesEntities1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Category" EntityType="Self.Category" />
           <EntitySet Name="CookingStage" EntityType="Self.CookingStage" />
           <EntitySet Name="Dish" EntityType="Self.Dish" />
@@ -319,9 +319,9 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="Хранилище MyRecipes4ModelContainer" CdmEntityContainer="MyRecipes4Entities">
+        <EntityContainerMapping StorageEntityContainer="Хранилище MyRecipesModelContainer" CdmEntityContainer="MyRecipesEntities1">
           <EntitySetMapping Name="Category">
-            <EntityTypeMapping TypeName="MyRecipes4Model.Category">
+            <EntityTypeMapping TypeName="MyRecipesModel.Category">
               <MappingFragment StoreEntitySet="Category">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -329,7 +329,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="CookingStage">
-            <EntityTypeMapping TypeName="MyRecipes4Model.CookingStage">
+            <EntityTypeMapping TypeName="MyRecipesModel.CookingStage">
               <MappingFragment StoreEntitySet="CookingStage">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Description" ColumnName="Description" />
@@ -339,7 +339,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Dish">
-            <EntityTypeMapping TypeName="MyRecipes4Model.Dish">
+            <EntityTypeMapping TypeName="MyRecipesModel.Dish">
               <MappingFragment StoreEntitySet="Dish">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -352,7 +352,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Ingredient">
-            <EntityTypeMapping TypeName="MyRecipes4Model.Ingredient">
+            <EntityTypeMapping TypeName="MyRecipesModel.Ingredient">
               <MappingFragment StoreEntitySet="Ingredient">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -364,7 +364,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="IngredientOfStage">
-            <EntityTypeMapping TypeName="MyRecipes4Model.IngredientOfStage">
+            <EntityTypeMapping TypeName="MyRecipesModel.IngredientOfStage">
               <MappingFragment StoreEntitySet="IngredientOfStage">
                 <ScalarProperty Name="CookingStageId" ColumnName="CookingStageId" />
                 <ScalarProperty Name="IngredientId" ColumnName="IngredientId" />
@@ -373,7 +373,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Unit">
-            <EntityTypeMapping TypeName="MyRecipes4Model.Unit">
+            <EntityTypeMapping TypeName="MyRecipesModel.Unit">
               <MappingFragment StoreEntitySet="Unit">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Name" ColumnName="Name" />

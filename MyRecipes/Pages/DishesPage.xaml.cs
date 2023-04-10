@@ -31,7 +31,7 @@ namespace MyRecipes.Pages
             DishesList.ItemsSource = Connection.db.Dish.ToList();
             Category category = new Category();
             category.Name = "Все категории";
-            List<Category> categories = Connection.db.Category.ToList();
+            var categories = Connection.db.Category.ToList();
             categories.Insert(0, category);
             Navigation.main.CategoryCB.ItemsSource = categories;
         }

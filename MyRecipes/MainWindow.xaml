@@ -6,6 +6,9 @@
         xmlns:local="clr-namespace:MyRecipes"
         mc:Ignorable="d"
         Title="Мои рецепты" Height="450" Width="800">
+    <Window.Resources>
+
+    </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto" MinHeight="105"/>
@@ -19,39 +22,32 @@
 
         <Grid Grid.Row="1" Background="#FFFED7C1">
 
-            <Button x:Name="DishesBTN"
-                    Height="20"
-                    Width="70" 
-                    Background="#FFD5C847" 
-                    BorderBrush="#FF70716C"
+            <Button  x:Name="DishesBTN"
+                    
+                    Style="{DynamicResource ButtonStyle}"
                     Margin="12.5"
                     VerticalAlignment="Top"
                     Content="Блюда"
-                    FontSize="8"
-                    Click="DishesBTN_Click"/>
+                   
+                    Click="DishesBTN_Click" />
 
             <Button x:Name="IngridientBTN"
-                    Height="20"
-                    Width="70" 
-                    Background="#FFD5C847" 
-                    BorderBrush="#FF70716C"
+                    
+                    Style="{DynamicResource ButtonStyle}"
                     Margin="12.5 45"
                     VerticalAlignment="Top"
                     Content="Ингридиенты"
-                    FontSize="8"
+                   
                     Click="IngridientBTN_Click"/>
 
-            <Button x:Name="ExitBTN"
-                    Height="20"
-                    Width="70" 
-                    Background="#FFD5C847" 
-                    BorderBrush="#FF70716C"
-                    Margin="12.5"
-                    VerticalAlignment="Bottom"
+            <Button Style="{DynamicResource ButtonStyle}" x:Name="ExitBTN"
+                    
+                   
+                    Margin="0,286,0,0"
                     Content="Выход"
-                    FontSize="8"
-                    Click="ExitBTN_Click"/>
-            
+                 
+                    Click="ExitBTN_Click" VerticalAlignment="Top"/>
+
         </Grid>
 
         <Grid Grid.Column="1">
@@ -78,10 +74,10 @@
             <StackPanel VerticalAlignment="Bottom" x:Name="MenuInMain" >
 
                 <StackPanel Orientation="Horizontal">
-                
+
                     <StackPanel Orientation="Horizontal">
 
-                    <TextBlock Text="Категория: "/>
+                        <TextBlock Text="Категория: "/>
 
                         <ComboBox Width="110"
                               x:Name="CategoryCB" SelectionChanged="CategoryCB_SelectionChanged">
@@ -91,10 +87,10 @@
                                 </DataTemplate>
                             </ComboBox.ItemTemplate>
                         </ComboBox>
-    
+
 
                     </StackPanel>
-                
+
                     <StackPanel Orientation="Horizontal"
                                 Margin="20 0 0 0">
 
@@ -104,16 +100,16 @@
                                  x:Name="SearchTB" TextChanged="SearchTB_TextChanged"/>
 
                     </StackPanel>
-                    
+
                 </StackPanel>
-                    
+
 
                 <StackPanel>
 
                     <CheckBox Content="Показывать только блюда, на которые не хватает ингридиентов"/>
 
                 </StackPanel>
-                
+
             </StackPanel>
 
         </Grid>

@@ -13,10 +13,10 @@ namespace MyRecipes.DataBase
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class MyRecipes4Entities : DbContext
+    public partial class MyRecipesEntities1 : DbContext
     {
-        public MyRecipes4Entities()
-            : base("name=MyRecipes4Entities")
+        public MyRecipesEntities1()
+            : base("name=MyRecipesEntities1")
         {
         }
     

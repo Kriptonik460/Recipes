@@ -8,6 +8,6 @@ namespace MyRecipes.DataBase
 {
     class Connection
     {
-        public static MyRecipes4Entities db = new MyRecipes4Entities();
+        public  static MyRecipesEntities1 db = new MyRecipesEntities1();
     }
 }

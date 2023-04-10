@@ -8,6 +8,9 @@
       d:DesignHeight="345" d:DesignWidth="705"
       Title="IngridientPage"
       DataContext="{Binding RelativeSource={RelativeSource Self}}">
+    <Page.Resources>
+
+    </Page.Resources>
 
     <Grid>
 
@@ -16,7 +19,10 @@
             <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
 
-        <ListView x:Name="IngridientList" ItemsSource="{Binding Ingredient}" >
+        <ListView x:Name="IngridientList" ItemsSource="{Binding Ingredient}" Background="Transparent">
+            <ListView.Style>
+                <Style/>
+            </ListView.Style>
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <Border BorderBrush="Black" Height="40" Background="{Binding PriceColor}">
@@ -45,8 +51,8 @@
 
                                 <StackPanel VerticalAlignment="Center">
 
-                                    <TextBlock Text="Редактировать" Foreground="#FF9DA2FF" TextDecorations="Underline" MouseDown="TextBlock_MouseDown"/>
-                                    <TextBlock Text="Удалить" Foreground="#FFB82924" TextDecorations="Underline" MouseDown="TextBlock_MouseDown_1"/>
+                                    <TextBlock Text="Редактировать" TextDecorations="Underline" MouseDown="TextBlock_MouseDown" Foreground="#FF0300FF"/>
+                                    <TextBlock Text="Удалить" Foreground="Red" TextDecorations="Underline" MouseDown="TextBlock_MouseDown_1"/>
 
                                 </StackPanel>
 
@@ -60,31 +66,31 @@
 
         <StackPanel Grid.Row="1" Orientation="Horizontal">
 
-            <Button x:Name="FirstListBTN" Margin="3,5" Content="&lt;&lt;" Width="20" Height="20" Click="FirstListBTN_Click"/>
+            <Button x:Name="FirstListBTN" Margin="3,5" Content="&lt;&lt;" Width="20" Style="{DynamicResource ButtonStyle}" Height="20" Click="FirstListBTN_Click"/>
 
-            <Button x:Name="BackListBTN" Margin="3" Content="&lt;" Width="20" Height="20" Click="BackListBTN_Click"/>
+            <Button x:Name="BackListBTN" Margin="3" Content="&lt;" Width="20" Style="{DynamicResource ButtonStyle}" Height="20" Click="BackListBTN_Click"/>
 
             <TextBlock Text="{Binding NumberPage}" FontSize="17"></TextBlock>
             <TextBlock Text="/" FontSize="17"></TextBlock>
             <TextBlock Text="{Binding TotalNumberPages}"  FontSize="17"></TextBlock>
 
-            <Button x:Name="NextListBTN" Margin="3"  Content="&gt;" Width="20" Height="20" Click="NextListBTN_Click"/>
+            <Button x:Name="NextListBTN" Margin="3"  Content="&gt;" Style="{DynamicResource ButtonStyle}" Width="20" Height="20" Click="NextListBTN_Click"/>
 
-            <Button x:Name="LastListBTN" Margin="3" Content="&gt;&gt;" Width="20" Height="20" Click="LastListBTN_Click"/>
+            <Button x:Name="LastListBTN" Margin="3" Content="&gt;&gt;" Style="{DynamicResource ButtonStyle}" Width="20" Height="20" Click="LastListBTN_Click"/>
 
         </StackPanel>
 
         <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Grid.Row="1">
 
-            <Button x:Name="OneBtn" Margin="5" Content="1" Width="20" Click="OneBtn_Click"></Button>
-            <Button x:Name="TwoBtn"  Margin="5" Content="2" Width="20" Click="TwoBtn_Click"></Button>
-            <Button x:Name="ThreeBtn" Margin="5" Content="3" Width="20" Click="ThreeBtn_Click"></Button>
-            <Button x:Name="FourBtn"  Margin="5" Content="4" Width="20" Click="FourBtn_Click"></Button>
-            <Button x:Name="FifeBtn"  Margin="5" Content="5" Width="20" Click="FifeBtn_Click"></Button>
+            <Button x:Name="OneBtn" Margin="5" Content="1" Width="20" Click="OneBtn_Click" Style="{DynamicResource ButtonStyle}"></Button>
+            <Button x:Name="TwoBtn"  Margin="5" Content="2" Width="20" Click="TwoBtn_Click" Style="{DynamicResource ButtonStyle}"></Button>
+            <Button x:Name="ThreeBtn" Margin="5" Content="3" Width="20" Click="ThreeBtn_Click" Style="{DynamicResource ButtonStyle}"></Button>
+            <Button x:Name="FourBtn"  Margin="5" Content="4" Width="20" Click="FourBtn_Click" Style="{DynamicResource ButtonStyle}"></Button>
+            <Button x:Name="FifeBtn"  Margin="5" Content="5" Width="20" Click="FifeBtn_Click" Style="{DynamicResource ButtonStyle}"></Button>
 
         </StackPanel>
 
-        <Button Grid.Row="1" Margin="5" x:Name="AddMenuBTN" Content="+" HorizontalAlignment="Right" Width="20" Height="20" Click="AddMenuBTN_Click"/>
+        <Button Grid.Row="1" Margin="5" x:Name="AddMenuBTN" Style="{DynamicResource ButtonStyle}"  Content="+" HorizontalAlignment="Right" Width="20" Height="20" Click="AddMenuBTN_Click"/>
 
     </Grid>
 </Page>
